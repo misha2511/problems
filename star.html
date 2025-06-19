@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Pattern</title>
+</head>
+<body>
+  <p id="pyramid"></p>
+    <script type="text/javascript">
+
+///////////////////////////// DIFFERENT STAR PATTERN  //////////////////////
+
+document.write("<br> RIGHT ANGLED STAR");
+document.write("<br>");
+var x=1;
+for(x=1;x<=5;x++){
+  document.write("*".repeat(x) +"<br>");
+}
+
+document.write("<br> down triangle pattern");
+document.write("<br>");
+var x=5;
+for(x=5;x>=1;x--){
+  document.write("*".repeat(x) +"<br>");
+}
+
+document.write("<br>Center Pyramid");
+var n=5;
+  document.write("<br>");
+
+for(i=1;i<=n;i++){
+  space=n-i;
+  star=2*i-1;
+  document.write("&nbsp ".repeat(space));
+  document.write("*".repeat(star));
+  document.write("<br>");
+}
+document.write("<br> Inverted center Pyramid");
+document.write("<br>");
+var n=5
+for(i=0;i<=n;i++){
+  space=i;
+  star=2*n -2*i-1;
+  document.write("&nbsp ".repeat(space));
+  document.write("*".repeat(star));
+  document.write("<br>");
+}
+
+document.write("Diamond");
+var n=5;
+document.write("<br>");
+for(i=1;i<=n;i++){
+  space=n-i;
+  star=2*i-1;
+  document.write("&nbsp;".repeat(space));
+  document.write("*".repeat(star));
+  document.write("<br>");
+}
+for(i=n-1;i>=1;i--){
+  space=n-i;
+  star=2*i-1;
+  document.write("&nbsp;".repeat(space));
+  document.write("*".repeat(star));
+  document.write("<br>");
+}
+
+
+</script>
+
+<input type="button" value="Print" onclick="window.print()">
+</body>
+</html>
