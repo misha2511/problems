@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date formate</title>
+</head>
+<body>
+    <p id="date"></p>
+    <p id="index"></p>
+    <p id="arr"></p>
+    <p id="students"></p>
+    <p id="splice"></p>
+     <p id="slice"></p>
+     <p id="sort"></p>
+     <p id="rev"></p>
+     <p id="num"></p>
+     <p id="sort_arr"></p>
+
+    <script type="text/javascript">
+        var d=new Date("2025-06-18");
+        document.getElementById('date').innerHTML=d;
+        var x=new Date("06-18-2025");
+         document.getElementById('date').innerHTML=x;
+
+         var txt="My name is Misha";
+         var pos=txt.substr(3);
+         document.getElementById('index').innerHTML=pos;
+
+         var txt="Misha";
+         var arr=txt.split("");
+         var x="";
+         var i;
+         for(i=0;i<txt.length;i++){
+            x+=arr[i] + "<br>";
+         }
+         document.getElementById('arr').innerHTML=x;
+
+
+         var students=["Misha","Hetvi","Harvi"];
+         students[students.length]="Mistry";
+         var us=["Family"];
+         var students=students.concat(us);
+         document.getElementById('students').innerHTML=students.join("*");
+
+         var splice=["Misha","mistry","Harvi","hetvi"];
+         splice.splice(1,0,"Viralchandra");
+         var arr=splice.slice(0,3);
+         document.getElementById('splice').innerHTML=splice;
+         document.getElementById('slice').innerHTML=arr.join("/");
+         function sort(){
+            document.getElementById('sort').innerHTML=splice.sort();
+         }
+         document.getElementById('rev').innerHTML=splice.reverse();
+
+         var num=[4,34,21,121];
+         num.sort(function(a,b){return a-b});
+          document.write(num);
+          document.write("<br>"+num[0]+"<br>");
+        
+         num.sort(function(a,b){return b-a});
+          document.write(num);
+          document.write("<br>"+num[0]);
+         document.write("<br>");
+        document.write(Math.max.apply(null,num)); document.write("<br>");
+        document.write(Math.min.apply(null,num));
+
+
+       var cars=[
+        { type:"volvo",years:2060 },
+        { type:"Wagonar",years:2040 },
+        { type:"i10",years:2020 }
+
+    ]
+
+    function displaycar(){
+        document.getElementById('sort_arr').innerHTML=
+        cars[0].type+" "+cars[0].years+"<br>"+
+        cars[1].type+" "+cars[1].years+"<br>"+
+        cars[2].type+" "+cars[2].years+"<br>"
+    }
+    // displaycar();  
+    function myfunction(){
+        cars.sort (function(a,b){return a.years-b.years});
+         displaycar();
+    }
+    ////////////////// map method /////////////////////////
+    var num=[40,33,20,14];
+    var num1=num.map(mult);
+    document.write("<br>"+num1);
+    document.write("<br>"+num1.sort());
+    function mult(value,index,array){
+        return value*2;
+    }
+    //////////////////////// Filter method //////////////////
+    var num2=num1.filter(filter);
+    document.write("<br>"+num2);
+     function filter(value){
+        return value>30;
+    }
+    ////////////////// reduce method ///////////////////
+    var sum=num1.reduce(reduce);
+    document.write("<br>"+"sum of num1="+sum);
+    function reduce(total,value){
+        return total+value;
+    }
+
+    var fruits=['apple','mango','apple','banana'];
+    var i=fruits.indexOf('mango',0);
+    var c=fruits.indexOf('chiku',0);
+    document.write("<br>"+i);
+    document.write("<br>"+c);
+    </script>
+    <br><input type="button" value="Sort" onclick="sort()">
+    <input type="button" value="Sort_object" onclick="myfunction()">
+</body>
+</html>
