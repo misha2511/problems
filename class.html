@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <script>
+        class person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            greet(){
+                return "Hello Good monrning  " + this.name + " It's your Birthday today you are turned to  " + this.age;
+            }
+        }
+         const p1=new person("Misha",20);
+         document.getElementById("p1").innerHTML=(p1.greet());
+                //  debugger;
+
+    </script>
+</body>
+</html>
