@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class parent{
+            constructor(name,next){
+                this.name=name;
+                this.next=next;
+            }
+            inherit(){
+                document.write(this.name+'\'s' + " child is" + this.next+"<br>");
+            }
+        }
+        class child extends parent {
+          inherit(){
+            super.inherit();
+          }
+        }
+        class leaf extends child{
+            inherit(){
+                super.inherit();
+            }
+        }
+        c1=new child("Shantilal","Viral");
+        c2=new leaf("Viral"," Misha");
+        c1.inherit();
+        c2.inherit();
+    </script>
+</body>
+</html>
